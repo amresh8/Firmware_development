@@ -1,0 +1,15 @@
+In case of pointer arrays there is a confusion when the pointer points towards the blocks of free memory which will be
+used to store ints later in this case we can use dereferencing as ptr[i] direclty which decays to *(ptr+i)
+why so:
+because in this case the array in which we are storing our values is also in the form of a pointer to int so there is a
+a type match...
+
+But when you declare int*arr[10] this just creates 10 empty pointers ready to be Initialized they are currently wild pointer
+
+Remember in int *ptr[10]; there is fight between [] and * operator for the ptr to declare ptr as an array or a pointer since [] is having precedence therefore it becomes and array of 10 pointers pointing to int variables.
+
+when we do int (*ptr)[10]; here the () opeator increases the precedence of * and hence it becomes a pointer pointing to an array of 10 elements and we can assign an array to it 
+eg: int arr[10];
+    int (*ptr)[10]=&arr;
+
+
